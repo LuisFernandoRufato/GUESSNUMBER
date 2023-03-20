@@ -15,8 +15,39 @@ const Guess = {
 
 let numberDrawn = Guess.numberDrawn();
 
-function handleSubmit(e) {
+function udateAttempt(attempt, value) {
+    attempt.innerHTML = 'Tentativa: ' + value
+};
 
+function handleSubmit(e) {
+    e.preventDefault();
+
+    let kick = document.getElementById('kick').value;
+
+    if(!kick){
+        alert('Digite algum valor!')
+        return;
+    };
+
+    udateAttempt(attempt, ++Guess.attemptsNumber);
+
+    if(numberDrawn == kick) {
+        playAgain();
+        status.innerHTML = 'Parábens, você acertou!';
+        result.style.transition = '0.4s';
+        result.style.backgroundColor = '#37c978';
+        result.style.color = '#fff';
+        status.style.color = '#fff';
+        clear();
+    } else if(numberDrawn > kick) {
+        status.innerHTML = 'O número é maior!';
+        status.style.color = '#de4251';
+        clear();
+    } else if(numberDrawn < kick) {
+        status.innerHTML = 'O número é menor!';
+        status.style.color = '#de4251';
+        clear();
+    }
 };
 
 function playAgain() {
