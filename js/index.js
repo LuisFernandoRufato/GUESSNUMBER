@@ -1,9 +1,9 @@
 const form = document.getElementById('form'); 
 form.addEventListener('submit', handleSubmit);
 
-let status.document.getElementById('status');
-let attempt.document.getElementById('attempt');
-let result.document.getElementById('result');
+let status = document.getElementById('status');
+let attempt = document.getElementById('attempt');
+let result = document.getElementById('result');
 
 const Guess = {
     max: 10,
