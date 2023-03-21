@@ -15,7 +15,7 @@ const Guess = {
 
 let numberDrawn = Guess.numberDrawn();
 
-function udateAttempt(attempt, value) {
+function updateAttempt(attempt, value) {
     attempt.innerHTML = 'Tentativa: ' + value
 };
 
@@ -24,12 +24,12 @@ function handleSubmit(e) {
 
     let kick = document.getElementById('kick').value;
 
-    if(!kick){
+    if(!kick) {
         alert('Digite algum valor!')
         return;
     };
 
-    udateAttempt(attempt, ++Guess.attemptsNumber);
+    updateAttempt(attempt, ++Guess.attemptsNumber);
 
     if(numberDrawn == kick) {
         playAgain();
